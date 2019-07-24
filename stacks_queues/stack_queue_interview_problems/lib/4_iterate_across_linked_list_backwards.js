@@ -42,8 +42,11 @@ function iterateAcrossLinkedListBackwards(linkedList) {
     while (stack.length > 1) {
         output += `${stack.pop().value} -> `;
     }
-    output += `${stack.pop().value}`
+    output += `${stack.pop().value}`;
     return output;
 }
 
 exports.iterateAcrossLinkedListBackwards = iterateAcrossLinkedListBackwards;
+
+
+function 
