@@ -1,0 +1,14 @@
+.main {
+  width: 450px;
+}
+
+.stars {
+  background: blue;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  /* top: 0; 
+  left: 0; */
+  display: flex;
+  justify-content: space-between;
+}
