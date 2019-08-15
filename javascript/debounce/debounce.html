@@ -1,0 +1,46 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Debounce</title>
+</head>
+<body>
+  
+  <button id="debounce">debounce</button>
+
+
+  <script>
+  
+    const button = document.querySelector('#debounce');
+
+    // create a higher order function debounce that will accept the function to be executed, as well as a delay in milliseconds
+    const debounce = (func, delay) => {
+      // initialize a debounce timer
+      let debounceTimer;
+
+      // debounce we will return an anonymous function
+      return function() {
+        // we save context (this) and any arguments to be passed to our function via the apply method
+        const context = this;
+        let args = arguments;
+        // clear the interval everytime the debounce function is executed. multiple clicks will reset the internal timer, deplaying function execution
+        clearInterval(debounceTimer);
+        // we call settime on our passed in function, with context + arguments passed in, as well as our specified delay
+        debounceTimer = setTimeout(() => func.apply(context, Array.from(args)), delay);
+      }
+    };
+
+    const alertUser = (username) => {
+      alert(`${username} clicked on debounce! I will only alert every 3 seconds max.`);
+    };
+
+    button.addEventListener('click', debounce(() => alertUser('Kenneth'), 1000));
+  
+  </script>
+</body>
+</html>
