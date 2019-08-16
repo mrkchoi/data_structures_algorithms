@@ -39,7 +39,8 @@
       alert(`${username} clicked on debounce! I will only alert every 3 seconds max.`);
     };
 
-    button.addEventListener('click', debounce(() => alertUser('Kenneth'), 1000));
+    // wrap our function to be executed in HOC debounce
+    button.addEventListener('click', debounce(() => alertUser('Kenneth'), 3000));
   
   </script>
 </body>
