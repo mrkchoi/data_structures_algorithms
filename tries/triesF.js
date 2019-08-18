@@ -1,9 +1,48 @@
-// implement a trie with the following methods:
-// getWord
-// insert(word)
-// contains(word)
-// find(prefix)
-// findAllWords(node)
+'use strict';
+
+const fs = require('fs');
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+
+
+/*
+ * Complete the 'spellingBeeSolutions' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts following parameters:
+ *  1. STRING_ARRAY wordlist
+ *  2. STRING_ARRAY puzzles
+ */
+
+// create trie DS w/ insert + getWord methods
+// iterate through each word in wordlist and generate trie
+// iterate through each puzzle,
+// for each puzzle, generate a hashMap of characters
+// for DFS through trie, checking that the children of the node exists in hashMap
+// if exists in hashMap, add the child node to stack
+// check if this.end && this.getWord().includes(keyChar)
+// if both true, increment localCount
+// at the end of each puzzle, push localCount into globalCount array
+// return the completed globalCount array of integers
 
 class TrieNode {
   constructor(key) {
@@ -60,74 +99,13 @@ class Trie {
     // return the word
     return node.getWord();
   }
-
-  // contains(word)
-  contains(word) {
-    // set node to root
-    let node = this.root;
-    // iterate through each char or string
-    for (let i = 0; i < word.length; i++) {
-      // check if char exists as child of node
-      // if does not exist, return false
-      if (!node.children[word[i]]) return false;
-      // if does exist, move node pointer to child node at key
-      node = node.children[word[i]];
-    }
-    // at end of iterations, check that node.end === true and return
-    return node.end;
-  }
-
-  // find(prefix)
-  // return array of all strings that are valid words, given a prefix
-  find(prefix) {
-    // set node to root
-    let node = this.root;
-    let output = [];
-    // iterate through prefix
-    for (let i = 0; i < prefix.length; i++) {
-      // check that node.children[prefix[i]]
-      // if does not exist, return false
-      if (!node.children[prefix[i]]) return false;
-      // if exists, set pointer to children[prefix[i]]
-      node = node.children[prefix[i]];
-    }
-    // once complete, call findAllWords(node, output)
-    this.findAllWords(node, output);
-
-    return output;
-  }
-
-  // findAllWords(node, arr)
-  // given a node, find all of the valid words contained with the trie
-  findAllWords(node, arr) {
-    // check if node.end === true
-    // if true, getWord() and add to array
-    if (node.end) arr.push(node.getWord());
-
-    // recursively call FindAllWords for each of the children
-    Object.keys(node.children).forEach(child => {
-      this.findAllWords(node.children[child], arr);
-    });
-
-    return arr;
-  }
 }
-
-// let t = new Trie();
-// t.insert("apple");
-// t.insert("apples");
-// t.insert("apps");
-// t.insert("app");
-// t.insert("ape");
-// t.insert("append");
-// // t.contains('append');
-// t.find("app");
 
 // return a count of all words that exist in dictionary for an array of puzzles
 // output should be an array of integers, representing the counts of
 // matched words for each puzzle
 
-function search(wordList, puzzles) {
+function spellingBeeSolutions(wordList, puzzles) {
   // instantiate new trie
   let trie = new Trie();
   // add all words in dictionary to trie
@@ -160,7 +138,6 @@ function dfs(puzzle, trie, globalCounts) {
     let node = stack.pop();
     // if node.key does not exist in trie, next
     // if does exist
-    //     debugger;
     if (node.children === {}) return;
     // check if any children exist in hashMap.
     // if children do exist, filter and add the children to stack
@@ -170,7 +147,6 @@ function dfs(puzzle, trie, globalCounts) {
       }
     });
 
-    //     debugger
     if (node.end && node.getWord().includes(keyChar)) {
       currentCount += 1;
     }
@@ -182,17 +158,21 @@ function dfs(puzzle, trie, globalCounts) {
   // push currentCount to globalCounts
 }
 
-// apple = {
-//   "a": true,
-//   "p": true,
-//   "l": true,
-//   "e": true,
-// }
-
-// puzzle = 'axypezl'
 
 
-search(
-  ["APPLE", "PLEAS", "PLEASE"],
-  ["AELWXYZ", "AELPXYZ", "AELPSXY", "SAELPXY", "XAELPSY"]
-);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function main() {
