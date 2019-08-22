@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rippling</title>
+  <style>
+    div {
+      border: 1px solid red;
+      text-align: center;
+      padding: 5% 10%;
+    }
+
+    .parent {
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <main class="parent"></main>
+  
+  
+  <script>
+    let count = 5;
+    let parent = document.querySelector('.parent');
+
+    for (let i = count; i > 0; i--) {
+      let div = document.createElement('div');
+      if (i === count) {
+        div.setAttribute('width', "100%");
+        div.setAttribute('height', "100%");  
+      } else {
+        div.setAttribute('width', "80%");
+        div.setAttribute('height', "80%");
+      }
+      div.setAttribute('position', 'absolute');
+      div.setAttribute('transform', 'translate(-50%, -50%)');
+      div.setAttribute('left', '50%');
+      div.setAttribute('top', '50%');
+      
+      let p = document.createElement('p');
+
+      p.textContent = i;
+      div.appendChild(p);
+
+      parent.appendChild(div);
+
+      parent = div;
+    }
+  </script>
+</body>
+</html>

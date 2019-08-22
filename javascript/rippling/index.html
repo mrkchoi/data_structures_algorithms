@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <script src="script.js" defer></script>
+  <title>Rippling Form</title>
+</head>
+
+<body>
+  <form action="POST" class="form">
+    <div class="option__container">
+      <label for="option--1">
+        <div class="option__choice-wrapper selected">
+          <input type="radio" id="option--1" class="radio_input" name="options" value="everyone_except_1099" checked="true" />
+          <div class="circle-select">
+            <i class="fas fa-check"></i>
+          </div>
+          <p>
+            Everyone except 1099 contractors
+          </p> 
+        </div>
+      </label>
+      <label for="option--2">
+        <div class="option__choice-wrapper">
+          <input type="radio" id="option--2" class="radio_input" name="options" value="everyone" />
+          <div class="circle-select">
+            <i class="fas fa-check"></i>
+          </div>
+          <p>
+            Everyone including 1099 contractors
+          </p>
+        </div>
+      </label>
+      <label for="option--3">
+        <div class="option__choice-wrapper">
+          <input type="radio" id="option--3" class="radio_input" name="options" value="no_accounts" />
+          <div class="circle-select">
+            <i class="fas fa-check"></i>
+          </div>
+          <p>
+            Don't create accounts
+          </p>
+        </div>
+      </label>
+      <label for="option--4">
+        <div class="option__choice-wrapper">
+          <input type="radio" id="option--4" class="radio_input" name="options" value="new_hire_rules" />
+          <div class="circle-select">
+            <i class="fas fa-check"></i>
+          </div>
+          <p>
+            Set up rules for new hires
+          </p>
+        </div>
+      </label>
+    </div>
+    </div>
+  </form>
+</body>
+
+</html>

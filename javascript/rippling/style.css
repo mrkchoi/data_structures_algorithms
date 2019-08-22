@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.form {
+  margin: 0 auto;
+  /* max-width: 900px; */
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.option__container {
+  display: flex;
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* grid-template-rows: 10rem; */
+}
+
+.option__choice-wrapper {
+  flex-grow: 1;
+  flex: 1;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.option__choice-wrapper.selected {
+  background-color: deepskyblue;
+  color: white;
+}
+
+.circle-select {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 3px solid lightgray;
+  background-color: white;
+  background-color: rgba(250, 235, 235, 1);
+  z-index: 99;
+  position: relative;
+  top: -20px;
+  transition: all 150ms ease-in-out;
+}
+
+.circle-select i {
+  font-size: 1.6rem;
+  position: relative;
+  top: 30%;
+  color: white;
+  transition: all 150ms ease-in-out;
+}
+
+.option__choice-wrapper.selected .circle-select {
+  border: 3px solid white;
+}
+
+.option__choice-wrapper.selected .circle-select i {
+  color: deepskyblue;
+}
+
+
+
+/* input[type="radio"]:checked  */

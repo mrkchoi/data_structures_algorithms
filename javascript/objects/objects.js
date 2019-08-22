@@ -8,13 +8,37 @@ var endorsements = [
   { skill: 'html', user: 'Sue' } 
 ];
 
-getSkills = (endorsements) => { 
+// Result // [ 
+  // { skill: 'javascript', user: ['Chad', 'Bill', 'Sue'], count: 3 }, 
+  // { skill: 'css', user: ['Sue', 'Bill'], count: 2 }, 
+  // { skill: 'html', user: ['Sue'], count: 1 } 
+// ]; 
 
-  // Result // [ 
-    // { skill: 'javascript', user: ['Chad', 'Bill', 'Sue'], count: 3 }, 
-    // { skill: 'css', user: ['Sue', 'Bill'], count: 2 }, 
-    // { skill: 'html', user: ['Sue'], count: 1 } 
-    // ]; 
+// iterate through each el
+// for each, check if exists in obj
+// if does not exist,
+// add to object as object value under skill key
+// update users arr + count
+// if exists,
+// update users arr + count
+// at end, grab all values of object and put into return array
+
+getSkills = (endorsements) => { 
+  // let allSkills = {};
+
+  // endorsements.forEach(endorsement => {
+  //   if (!allSkills[endorsement.skill]) {
+  //     allSkills[endorsement.skill] = {
+  //       skill: endorsement,
+  //       user: [],
+  //       count: 0
+  //     }
+  //   }
+  //   allSkills[endorsement.skill].user.push(endorsement.user);
+  //   allSkills[endorsement.skill].count += 1;
+  // });
+
+  // return Object.values(allSkills);
 } 
 
 // see this image: http://i.imgur.com/UIeB3n4.png
