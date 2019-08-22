@@ -6,6 +6,8 @@
 .form {
   margin: 0 auto;
   /* max-width: 900px; */
+  position: relative;
+  margin-top: 4rem;
 }
 
 p {
@@ -28,7 +30,7 @@ p {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 4rem 2rem 2rem 2rem;
   margin: 5px;
   cursor: pointer;
 }
@@ -67,6 +69,25 @@ p {
   color: deepskyblue;
 }
 
+.recommended {
+  position: absolute;
+  top: -2rem;
+  z-index: 999;
+  background-color: royalblue;
+  padding: .8rem 1.4rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+  border-radius: 30px;
+  opacity: 0;
+  visibility: hidden;
+  /* transition: all 100ms ease-in-out; */
+}
 
+.option__choice-wrapper.selected .recommended {
+  opacity: 1;
+  visibility: visible;
+}
 
 /* input[type="radio"]:checked  */
