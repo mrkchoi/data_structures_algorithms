@@ -1,0 +1,15 @@
+* {
+  font-family: sans-serif;
+}
+
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+
+input {
+  padding: 1rem;
+  width: 500px;
+  font-size: 1.6rem;
+}
