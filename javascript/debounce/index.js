@@ -1,5 +1,39 @@
 
 
+
+
+const input = document.querySelector('#input');
+
+let debouncedGetData = debounce(getData, 300);
+
+input.addEventListener('keyup', debouncedGetData);
+
+let counter = 0;
+function getData() {
+  console.log('making api call', counter++);
+}
+
+function debounce(func, delay) {
+  let timer;
+
+  return function() {
+    let context = this;
+    let args = arguments;
+
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(context, args);
+    }, delay);
+  }
+}
+
+
+
+
+
+
+
+
 // add event listener to DOM
 // write debounce function that will take in a function + delay (in milliseconds)
 // debounce will init a variable for the setTimeout
@@ -14,30 +48,30 @@
 
 
 
-const input = document.querySelector('#input');
+// const input = document.querySelector('#input');
 
-const debouncedGetData = debounce(getData, 300);
-input.addEventListener('keyup', debouncedGetData);
+// const debouncedGetData = debounce(getData, 300);
+// input.addEventListener('keyup', debouncedGetData);
 
-let counter = 0;
-function getData() {
-  console.log("getting data", counter++);
-}
+// let counter = 0;
+// function getData() {
+//   console.log("getting data", counter++);
+// }
 
-function debounce(func, delay) {
-  // init timer
-  let timer;
-  return function() {
-    // context will become input
-    let context = this;
-    // args will be any arguments passed to function from event handler (i.e. event object)
-    let args = arguments;
+// function debounce(func, delay) {
+//   // init timer
+//   let timer;
+//   return function() {
+//     // context will become input
+//     let context = this;
+//     // args will be any arguments passed to function from event handler (i.e. event object)
+//     let args = arguments;
 
-    // clear timeout if any
-    clearTimeout(timer);
-    // set new setTimeout
-    timer = setTimeout(() => {
-      func.apply(context, args);
-    }, delay);
-  }
-}
+//     // clear timeout if any
+//     clearTimeout(timer);
+//     // set new setTimeout
+//     timer = setTimeout(() => {
+//       func.apply(context, args);
+//     }, delay);
+//   }
+// }
