@@ -29,10 +29,12 @@
   
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.search?apikey=1985a5d0246d84f9fef6bb782470323f&q_artist=${query}&limit=5)`
+        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.search?apikey=2dd5b5ebd089ce825e921659c497c847&q_artist=${query}&limit=5)`
       )
       .then(res => {
-        let artistNames = res.data.message.body.artist_list.map(item => item.artist.artist_name);
+        let artistNames = res.data.message.body.artist_list.map(
+          item => item.artist.artist_name
+        );
         renderAutocompleteResults(artistNames);
       });
   }
