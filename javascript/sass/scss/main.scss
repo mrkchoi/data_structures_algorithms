@@ -1,0 +1,60 @@
+
+@import 'reset';
+// Variables
+
+$font-main: 'Helvetica', sans-serif;
+$color-primary: pink;
+$color-secondary: orangered;
+$color-grey: lightgrey;
+$color-white: white;
+
+
+@mixin transform($property) {
+  transform: $property;
+}
+
+%flex-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: $font-main;
+  background-color: $color-primary;
+  @extend %flex-row-center;
+}
+
+.main {
+  width: 900px/1200px * 100%;
+}
+
+.aside {
+  width: 300px/1200px * 100%;
+}
+
+section {
+  // border: 1px solid rgba($color-secondary, 1);
+}
+
+
+.list {
+  border: 1px solid $color-secondary;
+  @extend %flex-row-center;
+
+  &__item {
+    display: block;
+    padding: 1rem;
+  }
+}
+
+ul {
+  li {
+    a {
+      font-size: 3rem;
+      display: block;
+      // @include transform(rotate(90deg));
+    }
+  }
+}

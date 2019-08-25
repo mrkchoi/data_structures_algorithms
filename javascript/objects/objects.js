@@ -54,3 +54,32 @@ let skills = {
   html: {skill: 'javascript', user: [], count: 0},
   css: {skill: 'javascript', user: [], count: 0}
 };
+
+
+
+
+
+let obj = {
+  shoes: [
+    {
+      brand: 'adidas', 
+      size: 10
+    }, 
+    {
+      brand: 'nike', 
+      size: 4
+    }
+  ]
+}
+
+// return an array of all the shoe brands
+
+function getBrands(obj) {
+  let output = [];
+
+  obj.shoes.forEach(item => {
+    output.push(item.brand);
+  })
+
+  return output;
+}
