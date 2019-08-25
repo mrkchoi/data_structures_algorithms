@@ -1,5 +1,8 @@
 
 
+
+
+
 // add event listener on DOM for percentage from bottom of viewport
 // wrap callback in throttled function
 // inside of function, if meets or exceeds threshold,
@@ -7,7 +10,7 @@
 
 const parent = document.querySelector('.parent');
 
-const throttledHandleScroll = throttle(handleScroll, 500);
+const throttledHandleScroll = throttle(handleScroll, 2000);
 
 document.addEventListener('scroll', throttledHandleScroll);
 
