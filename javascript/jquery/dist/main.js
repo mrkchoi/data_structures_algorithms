@@ -16,7 +16,7 @@ window.$$;
 // let nodeCollection = new DOMNodeCollection();
 
 
-function $$(arg) {
+let $$ = function(arg) {
   let selection;
   if (typeof arg === "function") {
     let queue = [];
@@ -37,6 +37,29 @@ function $$(arg) {
   return new DOMNodeCollection(selection);
 }
 
+$$.extend = function() {
+  let objs = [...arguments];
+  let first = objs[0];
+  objs.forEach(obj => {
+    first = Object.assign(first, obj);
+  })
+
+  return first;
+}
 
 
+$$.ajax = function(options) {
+  const type = options.type;
+  const url = options.url;
+  const callbackSuccess = options.success;
+  const data = options.data || {};
 
+  // create xhr object
+  let xhr = new XMLHttpRequest();
+  // open request and pass in type (e.g. POST, GET) & path
+  xhr.open(type, url);
+  // register a callback
+  xhr.onload = callbackSuccess;
+  // send data with optional payload
+  xhr.send(data);
+}
