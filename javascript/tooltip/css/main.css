@@ -1,0 +1,52 @@
+* {
+  font-family: "Helvetica", sans-serif; }
+
+.main {
+  margin-top: 4rem; }
+
+.third {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem; }
+  .third ul {
+    display: flex; }
+    .third ul li {
+      list-style: none; }
+      .third ul li .nav__btn {
+        padding: 1rem;
+        background-color: pink;
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid lightgreen;
+        border-radius: 10px;
+        margin: 1rem 3rem;
+        box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
+        transition: all 100ms ease-in-out;
+        text-align: center;
+        cursor: pointer;
+        position: relative; }
+        .third ul li .nav__btn .nav__tooltip {
+          display: none;
+          position: absolute;
+          top: 5.7rem;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: black;
+          color: white;
+          padding: 1rem;
+          border-radius: 5px; }
+        .third ul li .nav__btn .tooltip__pointer {
+          width: 0;
+          height: 0;
+          border-bottom: 10px solid black;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          position: absolute;
+          top: -.2rem;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+        .third ul li .nav__btn:hover, .third ul li .nav__btn:focus {
+          box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3); }
+          .third ul li .nav__btn:hover [role="tooltip"], .third ul li .nav__btn:focus [role="tooltip"] {
+            display: block; }
