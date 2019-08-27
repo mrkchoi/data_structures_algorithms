@@ -1,4 +1,22 @@
 
+
+// find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element
+
+// [3,2,1,5,6,4], k = 2 // => 5
+// [3,2,3,1,2,4,5,5,6], k = 4 // => 4
+
+// possible strategies:
+  // sort the array, and then find the kth item from the end
+  // create a heap, deleteMax() element k - 1 times, and return maxHeap.array[1]
+
+// strategy #1
+const findKthLargest = function(nums, k) {
+  return nums.sort((a,b) => a - b)[nums.length - k]
+}
+
+// strategy #2
+
+
 class MaxHeap {
   constructor() {
     this.array = [null];
@@ -34,7 +52,7 @@ class MaxHeap {
     // if this.array.length === 1, return null;
 
     if (this.array.length === 2) return this.array.pop();
-    if (this.array.length === 1) return null;
+    if (this.array.length === 1) return;
     // swap first and last elements
     [this.array[1], this.array[this.array.length - 1]] = [
       this.array[this.array.length - 1],
@@ -92,7 +110,17 @@ class MaxHeap {
   }
 }
 
+function findKthLargest(nums, k) {
+  // create MaxHeap with all elements in nums
+  // set count = 1
+  let heap = new MaxHeap();
+  let count = 1;
+  nums.forEach(num => heap.insert(num));
 
-module.exports = {
-    MaxHeap
-};
+  // while count < k, deleteMax()
+  while (count < k) {
+    heap.deleteMax();
+  }
+  // return heap.array[1];
+  return heap.array[1];
+}
