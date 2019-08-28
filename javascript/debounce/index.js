@@ -2,30 +2,116 @@
 
 
 
-const input = document.querySelector('#input');
+// select input on DOM
+// set throttle HOF invoked with callback and delay to variable
+// set variable to event listener
+// define function (callback)
+// define debounce function
 
-let debouncedGetData = debounce(getData, 300);
 
-input.addEventListener('keyup', debouncedGetData);
+const input = document.querySelector("#input");
+
+const debouncedHandleClick = debounce(handleClick, 500);
+
+input.addEventListener('click', debouncedHandleClick);
 
 let counter = 0;
-function getData() {
-  console.log('making api call', counter++);
+function handleClick() {
+  console.log('clicked!', counter++);
 }
 
-function debounce(func, delay) {
-  let timer;
+// only execute func after a given delay. with multiple clicks, the function should only execute after the last click
 
+function debounce(func, delay) {
+  let lastRan;
   return function() {
     let context = this;
-    let args = arguments;
+    let args = Array.from(arguments);
 
-    clearTimeout(timer);
-    timer = setTimeout(() => {
+    clearTimeout(lastRan);
+    lastRan = setTimeout(() => {
       func.apply(context, args);
     }, delay);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const input = document.querySelector('#input');
+
+// let debouncedGetData = debounce(getData, 300);
+
+// input.addEventListener('keyup', debouncedGetData);
+
+// let counter = 0;
+// function getData() {
+//   console.log('making api call', counter++);
+// }
+
+// function debounce(func, delay) {
+//   let timer;
+
+//   return function() {
+//     let context = this;
+//     let args = arguments;
+
+//     clearTimeout(timer);
+//     timer = setTimeout(() => {
+//       func.apply(context, args);
+//     }, delay);
+//   }
+// }
 
 
 

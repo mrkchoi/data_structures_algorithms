@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  padding: 1rem;
+}
+
+.main {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main .card {
+  margin: 2rem;
+  /* border: 1px solid red; */
+  padding: 2rem 0;
+  min-width: 250px;
+}
+
+.uglybtn {
+  cursor: pointer;
+}
+
+.todoitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid pink; */
+  padding: .2rem 2rem;
+}
+
+.todoitem p {
+  /* margin-right: 1rem; */
+  /* margin-bottom: 1rem; */
+  margin-bottom: 0 !important;
+  cursor: pointer;
+}
