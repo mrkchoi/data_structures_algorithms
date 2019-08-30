@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>todo w/ localstorage</title>
+</head>
+<body>
+  <div class="ui container">  
+    <form method="POST" class="ui form">
+      <input type="text" class="ui input">
+      <input type="submit" value="+ todo" class="ui button basic input">
+    </form>
+
+    <div class="divider ui"></div>
+    <div class="todo_container">
+      <h4 class="ui header">Todos:</h4>
+      <ul class="todolist"></ul>
+      <button class="delete-btn ui button basic">delete all</button>
+    </div>
+  </div>
+
+  <script src="./todo.js"></script>
+</body>
+</html>
