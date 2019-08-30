@@ -40,6 +40,7 @@ renderTodosFromLS();
 
 function handleSubmit(e) {
   e.preventDefault();
+  if (input.value === '') return;
   let li = createTodoItem(input.value);
   ul.appendChild(li);
 
