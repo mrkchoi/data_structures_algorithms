@@ -8,28 +8,63 @@
 // [1] => [1]
 // [[1]] => [1]
 
-// 
+// init stack with first element shifted off
+// init output array
+// go through until stack.empty
+// if !cur instanceof Array,
+// add to output 
+// else,
+// add 
 function flattenIter(arr) {
   let output = [];
 
-  let stack = [arr.shift()];
-  while (stack.length) {
-    let cur = stack.pop();
-
-    if (cur instanceof Array) {
-
+  while (arr.length) {
+    let current = arr.shift();
+    if (current instanceof Array) {
+      output = output.concat(current);
     } else {
-      output.push(cur);
+      output.push(current);
     }
   }
+
+  return output;
 }
 
+flattenIter([1,2,3,4,5]);
+flattenIter([1, 2, [3, [4, [5]]]]);
 
 
+// init i = 0,
+// error checking, if not array, return arr
+// iterate through arr while i < arr.length
+// if arr[i] is an array, 
+// splice from curIdx, 1 element, spread arr[i]
+// i is not incremented in this case, which allows us to verify that arr[i] is now not an instance of array.
+// if arr[i] is still an array, we continue to splice
+// once arr[i] is not an array, we increment i
+// continue through all indices of arr
+// return arr
+
+function flatten(arr) {
+  if (!arr instanceof Array) return;
+
+  let i = 0;
+
+  while (i < arr.length) {
+    if (arr[i] instanceof Array) {
+      arr.splice(i, 1, ...arr[i]);
+    } else {
+      i += 1;
+    }
+  }
+
+  return arr;
+}
+
+flatten([[[[[1]]]], 2, [3, [4, [5]]]]);
 
 
-
-
+arr = [1, 2, 3, 4, 5];
 
 
 
@@ -54,5 +89,4 @@ function flattenRecur(arr) {
   }
 
   return output;
-}``
-`
+}
