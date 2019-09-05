@@ -67,6 +67,23 @@ flatten([[[[[1]]]], 2, [3, [4, [5]]]]);
 arr = [1, 2, 3, 4, 5];
 
 
+function flatten(arr) {
+  if (!arr instanceof Array) return;
+
+  let i = 0;
+
+  while (i < arr.length) {
+    if (arr[i] instanceof Array) {
+      arr.splice(i, 1, ...arr[i]);
+    } else {
+      i += 1;
+    }
+  }
+
+  return arr;
+}
+
+let arr = [[[[1]]],2,[3,[4,[5,[6,[7,[8,[9,[10]]]]]]]]];
 
 // init output arr
 // iterate through each element
