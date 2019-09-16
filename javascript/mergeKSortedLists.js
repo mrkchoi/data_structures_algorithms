@@ -238,68 +238,68 @@ var mergeKLists = function(lists) {
 //   return output.next;
 // };
 
-// class MinHeap {
-//   constructor() {
-//     this.keys = [null];
-//   }
+class MinHeap {
+  constructor() {
+    this.keys = [null];
+  }
 
-//   getParentIdx(idx) {
-//     return Math.floor(idx / 2);
-//   }
+  getParentIdx(idx) {
+    return Math.floor(idx / 2);
+  }
 
-//   getLeftChildIdx(idx) {
-//     return (idx * 2);
-//   }
+  getLeftChildIdx(idx) {
+    return (idx * 2);
+  }
 
-//   getRightChildIdx(idx) {
-//     return (idx * 2) + 1;
-//   }
+  getRightChildIdx(idx) {
+    return (idx * 2) + 1;
+  }
 
-//   insert(node) {
-//     this.keys.push(node);
-//     this.siftUp(this.keys.length - 1);
-//   }
+  insert(node) {
+    this.keys.push(node);
+    this.siftUp(this.keys.length - 1);
+  }
 
-//   siftUp(idx) {
-//     if (idx <= 1) return;
-//     let parentIdx = this.getParentIdx(idx);
+  siftUp(idx) {
+    if (idx <= 1) return;
+    let parentIdx = this.getParentIdx(idx);
 
-//     if (this.keys[idx].val < this.keys[parentIdx].val) {
-//       [this.keys[idx], this.keys[parentIdx]] =
-//       [this.keys[parentIdx], this.keys[idx]];
+    if (this.keys[idx].val < this.keys[parentIdx].val) {
+      [this.keys[idx], this.keys[parentIdx]] =
+      [this.keys[parentIdx], this.keys[idx]];
 
-//       this.siftUp(parentIdx);
-//     }
-//   }
+      this.siftUp(parentIdx);
+    }
+  }
 
-//   deleteMin() {
-//     if (this.keys.length === 1) return;
-//     if (this.keys.length === 2) return this.keys.pop();
+  deleteMin() {
+    if (this.keys.length === 1) return;
+    if (this.keys.length === 2) return this.keys.pop();
 
-//     [this.keys[1],this.keys[this.keys.length - 1]] =
-//     [this.keys[this.keys.length - 1],this.keys[1]]
+    [this.keys[1],this.keys[this.keys.length - 1]] =
+    [this.keys[this.keys.length - 1],this.keys[1]]
 
-//     let min = this.keys.pop();
-//     this.siftDown(1);
-//     return min;
-//   }
+    let min = this.keys.pop();
+    this.siftDown(1);
+    return min;
+  }
 
-//   siftDown(idx) {
-//     let leftIdx = this.getLeftChildIdx(idx);
-//     let rightIdx = this.getRightChildIdx(idx);
+  siftDown(idx) {
+    let leftIdx = this.getLeftChildIdx(idx);
+    let rightIdx = this.getRightChildIdx(idx);
 
-//     if (leftIdx >= this.keys.length && rightIdx >= this.keys.length) return;
+    if (leftIdx >= this.keys.length && rightIdx >= this.keys.length) return;
 
-//     let leftVal = leftIdx < this.keys.length ? this.keys[leftIdx].val : Infinity;
-//     let rightVal = rightIdx < this.keys.length ? this.keys[rightIdx].val : Infinity;
+    let leftVal = leftIdx < this.keys.length ? this.keys[leftIdx].val : Infinity;
+    let rightVal = rightIdx < this.keys.length ? this.keys[rightIdx].val : Infinity;
 
-//     let swapIdx = leftVal < rightVal ? leftIdx : rightIdx;
+    let swapIdx = leftVal < rightVal ? leftIdx : rightIdx;
 
-//     if (this.keys[idx].val > this.keys[swapIdx].val) {
-//       [this.keys[idx],this.keys[swapIdx]] =
-//       [this.keys[swapIdx],this.keys[idx]];
+    if (this.keys[idx].val > this.keys[swapIdx].val) {
+      [this.keys[idx],this.keys[swapIdx]] =
+      [this.keys[swapIdx],this.keys[idx]];
 
-//       this.siftDown(swapIdx);
-//     }
-//   }
-// }
+      this.siftDown(swapIdx);
+    }
+  }
+}
