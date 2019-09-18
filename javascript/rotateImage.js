@@ -49,12 +49,51 @@
 //  1 [8,5,2],
 //  2 [9,6,3]
 
+// #1
+//     0 1 2
+//  0 [1,2,3],
+//  1 [4,5,6],
+//  2 [7,8,9]
 
-// error check: non-array/matrix, empty matrix, matrix.length === 1
+// #2
+//     0 1 2
+//  1 [7,8,9]
+//  2 [4,5,6],
+//  3 [1,2,3],
 
-// iterate through matrix, flip on diagonal, then flip on vertical axis
-// for diagonal, only need to flip items up to diagonal line,
-// for vertical flip, only need to flip items up to vertical midpoint
+// #3
+//     0 1 2
+//  1 [7,8,9]
+//  2 [4,5,6],
+//  3 [1,2,3],
+
+// error check: non-array, array of length 1
+// reverse the matrix (top row will become bottom row etc)
+// transpose the matrix on the diagonal axis (topleft, bottomright)
+
+function rotate(matrix) {
+  if (!Array.isArray(matrix)) throw new TypeError('Invalid input: input type must be array');
+  if (matrix.length === 0 || (matrix.length === 1 && matrix[0].length === 1)) return;
+
+  matrix = matrix.reverse();
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = i; j < matrix.length; j++) {
+      [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 function rotate(matrix) {
