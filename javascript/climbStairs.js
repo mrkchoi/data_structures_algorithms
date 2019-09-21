@@ -1,6 +1,46 @@
 /**
  * @param {number} n
  * @return {number}
+*/
+
+// error check: non-number, less than 0
+
+// base cases: n === 0, n === 1, n === 2
+// we can use a fibonacci approach to solve this problem
+// if we look at the pattern, we can see that all of the possible combinations for a given set of stairs can be found by taking the sum of the previous two sets of stairs
+// we can solve this recursively, then attempt to solve the problem by storing all of the previous computations into an array and return the result at the index n
+// without storing the previous computations, we encounter a timeout. so, we must take a dynamic programming approach
+// 
+
+
+var climbStairs = function(n) {
+  let ways = new Array(n + 1).fill(0);
+  ways[0] = 0
+  ways[1] = 1
+  ways[2] = 2;
+  
+  for (let i = 3; i <= n; i++) {
+    let newWay = ways[i - 1] + ways[i - 2];
+    ways[i] = newWay;
+  }
+  
+  return ways[n];
+};
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @param {number} n
+ * @return {number}
  */
 
 // version #1
