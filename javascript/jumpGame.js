@@ -87,3 +87,43 @@ var canJump = function(nums) {
 canJump([0,0,0,1]);
 canJump([3,2,1,0,0,1]);
 canJump([5,4,3,0,2,0]);
+
+
+
+
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+*/
+
+// error check: non-array
+// edge case: empty array, arr.length === 1
+
+// init max = nums[0]
+// iterate through each element
+// if max < i, return false
+// check Math.max(i + nums[i], max)
+// if max >= nums.length - 1, return true
+// return false
+
+// [2,3,1,1,4]
+ // 0 1 2 3 4 
+
+var canJump = function(nums) {
+  if (!Array.isArray(nums)) throw new TypeError("Invalid input: input type must be array");
+  if (nums.length === 0 || nums.length === 1) return true;
+  
+  let max = nums[0];
+  
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (max < i) return false;
+    let newMax = nums[i] + i;
+    max = Math.max(max, newMax);
+    if (max >= nums.length - 1) return true;
+  }
+  
+  return false;
+};
+
+  
