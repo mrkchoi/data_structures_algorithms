@@ -43,7 +43,6 @@ var decodeString = function(s) {
   if (typeof s !== 'string') throw new TypeError('Invalid input: input type must be string');
   if (s.length < 4) return s;
 
-  let output = '';
   let stack = [];
 
   for (let i = 0; i < s.length; i++) {
