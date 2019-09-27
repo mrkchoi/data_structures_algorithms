@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Clock from './Clock';
+// import Clock from './Clock';
 // import Toggle from './Toggle';
 // import Greeting from './Greeting';
 // import Mailbox from './Mailbox';
-import Page from './Page';
+// import Page from './Page';
+import Number from './Number';
 
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
     return (
       <div className="container">
         {/* <Clock increment={5}/> */}
-        <Page />
+        <Number numbers={[1,2,3,4,5]}/>
       </div>
     );
   }
