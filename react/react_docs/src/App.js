@@ -6,7 +6,9 @@ import './App.css';
 // import Greeting from './Greeting';
 // import Mailbox from './Mailbox';
 // import Page from './Page';
-import Number from './Number';
+// import Number from './Number';
+// import Form from './Form';
+import Calculator from './Calculator';
 
 
 class App extends Component {
@@ -14,7 +16,7 @@ class App extends Component {
     return (
       <div className="container">
         {/* <Clock increment={5}/> */}
-        <Number numbers={[1,2,3,4,5]}/>
+        <Calculator />
       </div>
     );
   }
