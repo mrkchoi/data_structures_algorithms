@@ -9,6 +9,7 @@ class TemperatureInput extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.input = React.createRef();
   }
 
   handleChange(e) {
@@ -26,7 +27,8 @@ class TemperatureInput extends Component {
             type="text" 
             name="temperature" 
             onChange={this.handleChange}
-            value={temperature} />
+            value={temperature}
+            ref={this.input} />
         </label>
         <br />
         <br />
