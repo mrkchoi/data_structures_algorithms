@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addTodo } from "../redux/todo_action"
 
-function TodoForm({ addTodo }) {
+function TodoForm() {
   const [inputValue, setInputValue] = useState('');
+  const dispatch = useDispatch();
+  
   const handleSubmit = e => {
     e.preventDefault();
-    addTodo(inputValue);
+    dispatch(addTodo(inputValue));
     setInputValue('');
   }
 
@@ -24,4 +28,3 @@ function TodoForm({ addTodo }) {
 }
 
 export default TodoForm
-``

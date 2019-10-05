@@ -1,0 +1,66 @@
+/******************************  
+GLOBAL
+*******************************/
+.content-wrapper {
+  margin-top: 7rem !important;
+}
+
+/******************************  
+NAVBAR
+*******************************/
+.navbar {
+  background-color: red;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form input[type="text"] {
+  max-width: 450px;
+  margin-right: 0.2rem !important;
+}
+
+/******************************  
+LISTINGS
+*******************************/
+.listings {
+  padding-top: 4rem;
+}
+
+.listing-item__image-container {
+  width: 300px !important;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.heart-icon {
+  font-size: 2rem !important;
+  cursor: pointer;
+}
+
+.content {
+  position: relative;
+}
+
+.heart-icon {}
+
+/******************************  
+FAVORITES
+*******************************/
+.favorites-wrapper {
+
+}
+
+.favorites .item {
+  cursor: pointer;
+}
